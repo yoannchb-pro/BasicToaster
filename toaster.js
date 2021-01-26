@@ -39,5 +39,5 @@ function Toaster(typeToaster, msg, color="rebeccapurple") {
   b.appendChild(t);
   setTimeout(() => {
     t.remove();
-  }, 10000);
+  }, 3000);
 }
