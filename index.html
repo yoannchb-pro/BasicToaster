@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toaster</title>
+    <script src="toaster.js" type="text/javascript"></script>
+    <style>
+        body,html{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+        }
+
+        button{
+            margin: 1em;
+            border: none;
+            padding: 0.5em;
+            color: white;
+            cursor: pointer;
+        }
+
+        input{
+            text-align: center;
+        }
+        .error{
+            background-color: red;
+        }
+
+        .information{
+            background-color: blue;
+        }
+
+        .valide{
+            background-color: green;
+        }
+
+        .warning{
+            background-color: gold;
+        }
+
+        .no{
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column">
+        <input type="text" value="Hello world" placeholder="Hello World">
+        <div style="display: flex">
+            <button class="error" onclick="error()">Error</button>
+            <button class="warning" onclick="warning()">Warning</button>
+            <button class="valide" onclick="valide()">Valide</button>
+            <button class="information" onclick="information()">Information</button>
+            <button class="no" onclick="no()">Hello world</button>
+        </div>
+    </div>
+</body>
+<script>
+    function error(){
+        Toaster('error', document.querySelector('input').value.trim(), 'Red');
+    }
+
+    function valide(){
+        Toaster('valid', document.querySelector('input').value.trim(), 'Green');
+    }
+
+    function information(){
+        Toaster('info', document.querySelector('input').value.trim(), 'Blue');
+    }
+
+    function warning(){
+        Toaster('warning', document.querySelector('input').value.trim(), 'Gold');
+    }
+
+    function no(){
+        Toaster(false, document.querySelector('input').value.trim());
+    }
+</script>
+</html>
